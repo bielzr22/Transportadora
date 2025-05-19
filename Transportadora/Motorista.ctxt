@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Motorista
+comment1.params=nome\ cpf\ telefone\ endereco\ cnh\ disponibilidade
+comment1.target=Motorista(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ boolean)
+comment2.params=
+comment2.target=java.lang.String\ getCnh()
+comment3.params=cnh
+comment3.target=void\ setCnh(java.lang.String)
+comment4.params=
+comment4.target=boolean\ getDisponibilidade()
+comment5.params=disponibilidade
+comment5.target=void\ setDisponibilidade(boolean)
+numComments=6

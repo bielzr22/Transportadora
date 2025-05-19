@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.target=Cliente
+comment1.params=nome\ cpf\ telefone\ endereco
+comment1.target=Cliente(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
+numComments=2
