@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=Transportadora
+comment1.params=nome
+comment1.target=Transportadora(java.lang.String)
+comment10.params=
+comment10.target=java.util.ArrayList\ getPedido()
+comment11.params=pe
+comment11.target=void\ adicionaPedido(PedidoEntrega)
+comment2.params=
+comment2.target=java.lang.String\ getNome()
+comment3.params=nome
+comment3.target=void\ setNome(java.lang.String)
+comment4.params=
+comment4.target=java.util.ArrayList\ getCliente()
+comment5.params=c
+comment5.target=void\ adicionaCliente(Cliente)
+comment6.params=
+comment6.target=java.util.ArrayList\ getMotorista()
+comment7.params=m
+comment7.target=void\ adicionaMotorista(Motorista)
+comment8.params=
+comment8.target=java.util.ArrayList\ getVeiculo()
+comment9.params=v
+comment9.target=void\ adicionaVeiculo(Veiculo)
+numComments=12

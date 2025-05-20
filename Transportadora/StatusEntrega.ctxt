@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=StatusEntrega
+comment1.params=statusAtual\ dataHora\ responsavel
+comment1.target=StatusEntrega(Status,\ java.util.Date,\ Funcionario)
+comment2.params=
+comment2.target=Status\ getStatusAtual()
+comment3.params=statusAtual
+comment3.target=void\ setStatusAtual(Status)
+comment4.params=
+comment4.target=java.util.Date\ getDataHora()
+comment5.params=dataHora
+comment5.target=void\ setDataHora(java.util.Date)
+comment6.params=
+comment6.target=Funcionario\ getResponsavel()
+comment7.params=responsavel
+comment7.target=void\ setResponsavel(Funcionario)
+numComments=8

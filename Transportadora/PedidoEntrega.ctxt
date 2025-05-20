@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=PedidoEntrega
+comment1.params=cliente\ motorista\ veiculo\ codRastreio
+comment1.target=PedidoEntrega(Cliente,\ Motorista,\ Veiculo,\ java.lang.String)
+comment10.params=
+comment10.target=java.util.ArrayList\ getStatusEntrega()
+comment11.params=se
+comment11.target=void\ adicionaStatusEntrega(StatusEntrega)
+comment2.params=
+comment2.target=Cliente\ getCliente()
+comment3.params=cliente
+comment3.target=void\ setCliente(Cliente)
+comment4.params=
+comment4.target=Motorista\ getMotorista()
+comment5.params=motorista
+comment5.target=void\ setMotorista(Motorista)
+comment6.params=
+comment6.target=Veiculo\ getVeiculo()
+comment7.params=veiculo
+comment7.target=void\ setVeiculo(Veiculo)
+comment8.params=
+comment8.target=java.lang.String\ getCodRastreio()
+comment9.params=codRastreio
+comment9.target=void\ setCodRastreio(java.lang.String)
+numComments=12

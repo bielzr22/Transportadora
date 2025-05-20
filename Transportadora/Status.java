@@ -1,0 +1,5 @@
+
+public enum Status
+{
+    COLETADO, EM_TRANSITO, EM_ROTA_DE_ENTREGA, ENTREGUE, CANCELADO;
+}
