@@ -20,7 +20,7 @@ public abstract class Pessoa
     }
     
     public String getCpf(){
-        return cpf;
+        return cpf; 
     }
     public void setCpf(String cpf){
         this.cpf = cpf;

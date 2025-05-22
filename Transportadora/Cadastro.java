@@ -19,6 +19,8 @@ public class Cadastro
             cadastrarMotorista();
         }else if(resp == 3){
             cadastrarPedido();
+        }else if(resp == 4){
+            cadastrarCliente();
         }
     }
     
@@ -58,6 +60,20 @@ public class Cadastro
         String cnh = sc.nextLine();
         
         Motorista motorista = new Motorista(nome, cpf, telefone, cnh);
+    }
+    
+    public void cadastrarCliente(){
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Nome do cliente: ");
+        String nome = sc.nextLine();
+        System.out.println("CPF do cliente: ");
+        String cpf = sc.nextLine();
+        System.out.println("Telefone do cliente: ");
+        String telefone = sc.nextLine();
+        
+        Cliente cliente = new Cliente(nome, cpf, telefone);
+        
     }
     
     
