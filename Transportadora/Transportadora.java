@@ -53,6 +53,10 @@ public class Transportadora
         if(p != null){
             StatusEntrega novoStatus = new StatusEntrega(statusAtualizado, new Date(), responsavel);
             p.adicionaStatusEntrega(novoStatus);
+            if(statusAtualizado.equals(Status.ENTREGUE) || statusAtualizado.equals(Status.CANCELADO)){
+                p.getMotorista().setDisponibilidade(true);
+                p.getVeiculo().setDisponibilidade(true);
+            }
             System.out.println("Status do pedido atualizado para: "+novoStatus);
         }
         else{
