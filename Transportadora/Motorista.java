@@ -5,10 +5,10 @@ public class Motorista extends Funcionario
     private String cnh;
     private boolean disponibilidade;
     
-    public Motorista(String nome, String cpf, String telefone, String endereco, String cnh, boolean disponibilidade){
-        super(nome, cpf, telefone, endereco);
+    public Motorista(String nome, String cpf, String telefone, String cnh){
+        super(nome, cpf, telefone);
         this.cnh = cnh;
-        this.disponibilidade = disponibilidade;
+        disponibilidade = true;
         
     }
     

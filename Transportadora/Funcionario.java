@@ -3,9 +3,9 @@
 public class Funcionario extends Pessoa
 {
     
-    public Funcionario(String nome, String cpf, String telefone, String endereco)
+    public Funcionario(String nome, String cpf, String telefone)
     {
-       super(nome, cpf, telefone, endereco);
+       super(nome, cpf, telefone);
     }
 
     

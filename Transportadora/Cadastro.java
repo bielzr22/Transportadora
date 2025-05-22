@@ -15,6 +15,10 @@ public class Cadastro
         
         if(resp == 1){
             cadastrarVeiculo();
+        }else if(resp == 2){
+            cadastrarMotorista();
+        }else if(resp == 3){
+            cadastrarPedido();
         }
     }
     
@@ -38,5 +42,24 @@ public class Cadastro
         }if(tipo.equalsIgnoreCase("caminhao")){
             Caminhao caminhao = new Caminhao(placa, modelo, capCarga);
         }
+
     }
+    
+    public void cadastrarMotorista(){
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Nome do motorista: ");
+        String nome = sc.nextLine();
+        System.out.println("CPF do motorista: ");
+        String cpf = sc.nextLine();
+        System.out.println("Telefone do motorista: ");
+        String telefone = sc.nextLine();
+        System.out.println("CNH do motorista: ");
+        String cnh = sc.nextLine();
+        
+        Motorista motorista = new Motorista(nome, cpf, telefone, cnh);
+    }
+    
+    
+    
 }

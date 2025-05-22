@@ -5,13 +5,11 @@ public abstract class Pessoa
     private String nome;
     private String cpf;
     private String telefone;
-    private String endereco;
     
-    public Pessoa(String nome, String cpf, String telefone, String endereco){
+    public Pessoa(String nome, String cpf, String telefone){
         this.nome = nome;
         this.cpf = cpf;
         this.telefone = telefone;
-        this.endereco = endereco;
     }
     
     public String getNome(){
@@ -35,12 +33,7 @@ public abstract class Pessoa
         this.telefone= telefone;
     }
     
-    public String getEndereco(){
-        return endereco;
-    }
-    public void setEndereco(String endereco){
-        this.endereco= endereco;
-    }
+
     
     
     
