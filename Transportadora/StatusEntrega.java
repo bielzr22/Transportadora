@@ -1,13 +1,13 @@
-import java.util.Date;
+import java.time.LocalDateTime;
 
 
 public class StatusEntrega
 {
     private Status statusAtual;
-    private Date dataHora;
+    private LocalDateTime dataHora;
     private Funcionario responsavel;
     
-    public StatusEntrega(Status statusAtual, Date dataHora, Funcionario responsavel){
+    public StatusEntrega(Status statusAtual, LocalDateTime dataHora, Funcionario responsavel){
         this.statusAtual = statusAtual;
         this.dataHora = dataHora;
         this.responsavel = responsavel;
@@ -20,10 +20,10 @@ public class StatusEntrega
         this.statusAtual = statusAtual;
     }
     
-    public Date getDataHora(){
+    public LocalDateTime getDataHora(){
      return dataHora;
     }
-    public void setDataHora(Date dataHora){
+    public void setDataHora(LocalDateTime dataHora){
      this.dataHora = dataHora;
     }
     

@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 import java.util.UUID;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 public class PedidoEntrega
 {
@@ -15,9 +15,9 @@ public class PedidoEntrega
      this.motorista = motorista;
      this.veiculo = veiculo;
      this.codRastreio = UUID.randomUUID();
-     this.statusEntrega = new ArrayList<>();
+     this.statusEntrega = new ArrayList<>();    
      
-     StatusEntrega statusInicial = new StatusEntrega(Status.COLETADO, new Date(), motorista);
+     StatusEntrega statusInicial = new StatusEntrega(Status.COLETADO, LocalDateTime.now(), motorista);
      statusEntrega.add(statusInicial);
      
  }

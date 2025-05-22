@@ -1,7 +1,7 @@
 
 import java.util.ArrayList;
 import java.util.UUID;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 public class Transportadora
 {
@@ -51,7 +51,7 @@ public class Transportadora
         PedidoEntrega p = rastrearPedidoPorCodigo(cod);
         
         if(p != null){
-            StatusEntrega novoStatus = new StatusEntrega(statusAtualizado, new Date(), responsavel);
+            StatusEntrega novoStatus = new StatusEntrega(statusAtualizado, LocalDateTime.now(), responsavel);
             p.adicionaStatusEntrega(novoStatus);
             if(statusAtualizado.equals(Status.ENTREGUE) || statusAtualizado.equals(Status.CANCELADO)){
                 p.getMotorista().setDisponibilidade(true);
@@ -64,9 +64,9 @@ public class Transportadora
         }
     }
     
-    public void criarPedido(Cliente c, Motorista m, Veiculo v){
-        m = motoristaDisponivel();
-        v = veiculoDisponivel();
+    public void criarPedido(Cliente c){
+        Motorista m = motoristaDisponivel();
+        Veiculo v = veiculoDisponivel();
         
         if(m == null){
             System.out.println("Nenhum motorista disponível");
