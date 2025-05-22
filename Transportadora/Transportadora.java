@@ -1,6 +1,7 @@
 
 import java.util.ArrayList;
 import java.util.UUID;
+import java.util.Date;
 
 public class Transportadora
 {
@@ -46,6 +47,18 @@ public class Transportadora
         
     }
     
+    public void atualizarStatus(UUID cod, Status statusAtualizado, Funcionario responsavel){
+        PedidoEntrega p = rastrearPedidoPorCodigo(cod);
+        
+        if(p != null){
+            StatusEntrega novoStatus = new StatusEntrega(statusAtualizado, new Date(), responsavel);
+            p.adicionaStatusEntrega(novoStatus);
+            System.out.println("Status do pedido atualizado para: "+novoStatus);
+        }
+        else{
+            System.out.println("Pedido não encontrado");
+        }
+    }
     
     
     
