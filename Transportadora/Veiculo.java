@@ -6,11 +6,11 @@ public class Veiculo
     private double capacidadeCarga;
     private boolean disponibilidade;
     
-    public Veiculo(String placa, String modelo, double capacidadeCarga, boolean disponibilidade){
+    public Veiculo(String placa, String modelo, double capacidadeCarga){
         this.placa = placa;
         this.modelo = modelo;
         this.capacidadeCarga = capacidadeCarga;
-        this.disponibilidade = disponibilidade;
+        disponibilidade = true;
     }
     
     public String getPlaca(){
