@@ -1,18 +1,19 @@
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class PedidoEntrega
 {
  private Cliente cliente;
  private Motorista motorista;
  private Veiculo veiculo;
- private String codRastreio;
+ private UUID codRastreio;
  private ArrayList<StatusEntrega> statusEntrega;
  
- public PedidoEntrega(Cliente cliente, Motorista motorista, Veiculo veiculo, String codRastreio){
+ public PedidoEntrega(Cliente cliente, Motorista motorista, Veiculo veiculo){
      this.cliente = cliente;
      this.motorista = motorista;
      this.veiculo = veiculo;
-     this.codRastreio = codRastreio;
+     this.codRastreio = UUID.randomUUID();
      this.statusEntrega = new ArrayList<>();
  }
  
@@ -37,10 +38,10 @@ public class PedidoEntrega
      this.veiculo = veiculo;
  }
  
- public String getCodRastreio(){
+ public UUID getCodRastreio(){
      return codRastreio;
  }
- public void setCodRastreio(String codRastreio){
+ public void setCodRastreio(UUID codRastreio){
      this.codRastreio= codRastreio;
  }
  
