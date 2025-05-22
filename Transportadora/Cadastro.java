@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Cadastro
 {
-    public void cadastrar(){
+    public static void cadastrar(Transportadora t){
         System.out.println("O que você deseja cadastrar?");
         System.out.println("1) Veiculo");
         System.out.println("2) Motorista");
@@ -14,17 +14,17 @@ public class Cadastro
         sc.nextLine();
         
         if(resp == 1){
-            cadastrarVeiculo();
+            cadastrarVeiculo(t);
         }else if(resp == 2){
-            cadastrarMotorista();
+            cadastrarMotorista(t);
         }else if(resp == 3){
-            cadastrarPedido();
+            cadastrarPedido(t);
         }else if(resp == 4){
-            cadastrarCliente();
+            cadastrarCliente(t);
         }
     }
     
-    public void cadastrarVeiculo(){
+    public static void cadastrarVeiculo(Transportadora t){
         Scanner sc = new Scanner(System.in);
         System.out.println("Qual o tipo de veículo (Carro / Moto / Caminhão) ? ");
         String tipo = sc.nextLine();
@@ -39,15 +39,18 @@ public class Cadastro
         
         if(tipo.equalsIgnoreCase("carro")){
             Carro carro = new Carro(placa, modelo, capCarga);
+            t.adicionaVeiculo(carro);
         }if(tipo.equalsIgnoreCase("moto")){
             Moto moto= new Moto(placa, modelo, capCarga);
+             t.adicionaVeiculo(moto);
         }if(tipo.equalsIgnoreCase("caminhao")){
             Caminhao caminhao = new Caminhao(placa, modelo, capCarga);
+            t.adicionaVeiculo(caminhao);
         }
-
+        
     }
     
-    public void cadastrarMotorista(){
+    public static void cadastrarMotorista(Transportadora t){
         Scanner sc = new Scanner(System.in);
         
         System.out.println("Nome do motorista: ");
@@ -60,9 +63,10 @@ public class Cadastro
         String cnh = sc.nextLine();
         
         Motorista motorista = new Motorista(nome, cpf, telefone, cnh);
+        t.adicionaMotorista(motorista);
     }
     
-    public void cadastrarCliente(){
+    public static void cadastrarCliente(Transportadora t){
         Scanner sc = new Scanner(System.in);
         
         System.out.println("Nome do cliente: ");
@@ -73,9 +77,22 @@ public class Cadastro
         String telefone = sc.nextLine();
         
         Cliente cliente = new Cliente(nome, cpf, telefone);
-        
+        t.adicionaCliente(cliente);
     }
     
-    
+    public static void cadastrarPedido(Transportadora t){
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("CPF do cliente para cadastrar o pedido: ");
+        String cpf = sc.nextLine();
+        
+        Cliente c = t.getClientePorCPF(cpf);
+        
+        if(c == null){
+            System.out.println("CPF não encontrado");
+        }else{
+            t.criarPedido(c);
+        }
+    }
     
 }

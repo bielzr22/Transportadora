@@ -30,6 +30,33 @@ public class Transportadora
             return null;
     }
     
+    public Cliente getClientePorCPF(String cpf){
+        for(Cliente c : clientes){
+            if(c.getCpf().equals(cpf)){
+                return c;
+            }
+        }
+        return null;
+    }
+    
+    public Veiculo getVeiculoPorPlaca(String placa){
+        for(Veiculo v : veiculos){
+            if(v.getPlaca().equals(placa)){
+                return v;
+            }
+        }
+        return null;
+    }
+    
+    public Motorista getMotoristaPorCNH(String cnh){
+        for(Motorista m : motoristas){
+            if(m.getCnh().equals(cnh)){
+                return m;
+            }
+        }
+        return null;
+    }
+    
     public void historicoPedido(UUID cod){
         PedidoEntrega p = rastrearPedidoPorCodigo(cod);
         if(p != null){

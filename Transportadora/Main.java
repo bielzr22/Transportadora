@@ -14,7 +14,7 @@ public class Main
         sc.nextLine();
         
         if(resp == 1){
-            
+            Cadastro.cadastrar(trasnportadora);
         }
     }
     
