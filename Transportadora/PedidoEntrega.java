@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.UUID;
+import java.util.Date;
 
 public class PedidoEntrega
 {
@@ -15,6 +16,10 @@ public class PedidoEntrega
      this.veiculo = veiculo;
      this.codRastreio = UUID.randomUUID();
      this.statusEntrega = new ArrayList<>();
+     
+     StatusEntrega statusInicial = new StatusEntrega(Status.COLETADO, new Date(), motorista);
+     statusEntrega.add(statusInicial);
+     
  }
  
  public Cliente getCliente(){

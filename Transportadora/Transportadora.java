@@ -60,7 +60,43 @@ public class Transportadora
         }
     }
     
+    public void criarPedido(Cliente c, Motorista m, Veiculo v){
+        m = motoristaDisponivel();
+        v = veiculoDisponivel();
+        
+        if(m == null){
+            System.out.println("Nenhum motorista disponível");
+        }
+        if(v == null){
+            System.out.println("Nenhum veículo disponível");
+        }
+        
+        if(m != null && v != null){
+            PedidoEntrega p = new PedidoEntrega(c, m, v);
+            m.setDisponibilidade(false);
+            v.setDisponibilidade(false);
+            pedidos.add(p);
+        }
+        
+    }
     
+    public Motorista motoristaDisponivel(){
+        for(Motorista m : motoristas){
+            if(m.getDisponibilidade()){
+                return m;
+            }
+        }
+        return null;
+    }
+    
+    public Veiculo veiculoDisponivel(){
+        for(Veiculo v : veiculos){
+            if(v.getDisponibilidade()){
+                return v;
+            }
+        }
+        return null;
+    }
     
     public String getNome(){
         return nome;
