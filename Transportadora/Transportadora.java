@@ -58,6 +58,32 @@ public class Transportadora
     }
     
     
+    public void removerMotorista(String cnh){
+        Motorista demitido = getMotoristaPorCNH(cnh);
+        
+        if(demitido == null){
+            System.out.println("Motorista não encontrado");
+        }else if(!demitido.getDisponibilidade()){
+             System.out.println("Motorista está em uma entrega e não pode ser removido.");   
+        }else{
+            motoristas.remove(demitido);
+            System.out.println("Motorista removido");
+        }
+    }
+    
+    public void removerVeiculo(String placa){
+        Veiculo removido = getVeiculoPorPlaca(placa);
+        
+        if(removido == null){
+            System.out.println("Veículo não encontrado");
+        }else if(!removido.getDisponibilidade()){
+            System.out.println("Veículo está em uma entrega e não pode ser removido.");
+        }else{
+            veiculos.remove(removido);
+            System.out.println("Veículo removido");
+        }
+    }
+    
     public void atualizarStatus(UUID cod, Status statusAtualizado, Funcionario responsavel){
         PedidoEntrega p = getPedidoPorCodigo(cod);
         

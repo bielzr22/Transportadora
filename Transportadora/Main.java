@@ -31,6 +31,7 @@ public class Main
         System.out.println("2) Consulta");
         System.out.println("3) Rastrear");
         System.out.println("4) Atualizar pedido");
+        System.out.println("5) Remover motorista ou veículo");
     }
     
     /*
@@ -49,4 +50,24 @@ public class Main
         
         t.atualizarStatus(cod, statusAtualizado,responsavel);
     }*/
+    
+    public static void remover(Transportadora t){
+        System.out.println("O que você deseja remover?");
+        System.out.println("1) Motorista");
+        System.out.println("2) Veículo");
+        
+        Scanner sc = new Scanner(System.in);
+        int resp = sc.nextInt();
+        sc.nextLine();
+        
+        if(resp == 1){
+            System.out.println("Qual a CNH do motorista que você deseja remover?");
+            String cnh = sc.nextLine();
+            t.removerMotorista(cnh);
+        }else if(resp == 2){
+            System.out.println("Qual a placa do veículo que você deseja remover?");
+            String placa = sc.nextLine();
+            t.removerVeiculo(placa);
+        }
+    }
 }
