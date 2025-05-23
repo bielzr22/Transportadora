@@ -10,19 +10,30 @@ public class Main
         
         Transportadora transportadora = new Transportadora(nome);
         
-        menuInicial();
-        int resp = sc.nextInt();
-        sc.nextLine();
+        String continuar = "s";
         
-        if(resp == 1){
+        while(continuar == "s"){
+            menuInicial();
+        
+            int resp = sc.nextInt();
+            sc.nextLine();
+        
+            if(resp == 1){
             Cadastro.cadastrar(transportadora);
-        }else if(resp == 2){
+            }else if(resp == 2){
             Consulta.menuConsulta(transportadora);
-        }else if (resp == 3) {
+            }else if (resp == 3) {
             Rastreio.menuRastreio(transportadora);
-        }else if (resp == 4) {
-            //atualizarPedido(transportadora);
+            }else if (resp == 4) {
+            atualizarPedido(transportadora);
+            }else if(resp == 5){
+                remover(transportadora);
+            }
+            
+            System.out.println("Deseja continuar (s/n) ?");
+            continuar = sc.nextLine();
         }
+        
     }
     
     public static void menuInicial(){
@@ -34,22 +45,37 @@ public class Main
         System.out.println("5) Remover motorista ou veículo");
     }
     
-    /*
+    
     public static void atualizarPedido(Transportadora t){
         Scanner sc = new Scanner(System.in);
         
         System.out.println("Código do pedido para atualizar: ");
         UUID cod = UUID.fromString(sc.nextLine());
         System.out.println("Status do pedido para atualizar: ");
-        Status statusAtualizado = sc.nextLine();
+        System.out.println("Opções: ");
+        for(Status s : Status.values()){
+            System.out.println(s);
+        }
+        
+        Status statusAtualizado = Status.valueOf(sc.nextLine().toUpperCase());
+        
+
+        if(statusAtualizado == null){
+            System.out.println("Status inválido");
+        }
+        
+        
         System.out.println("CNH do Motorista responsável pela atualização do pedido: ");
         String cnh = sc.nextLine();    
         Motorista responsavel = t.getMotoristaPorCNH(cnh);
-    
+        
+        if(responsavel == null){
+            System.out.println("Motorista não encontrado");
+        }
 
         
         t.atualizarStatus(cod, statusAtualizado,responsavel);
-    }*/
+    }
     
     public static void remover(Transportadora t){
         System.out.println("O que você deseja remover?");
