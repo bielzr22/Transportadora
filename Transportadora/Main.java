@@ -14,7 +14,9 @@ public class Main
         sc.nextLine();
         
         if(resp == 1){
-            Cadastro.cadastrar(trasnportadora);
+            Cadastro.cadastrar(transportadora);
+        }else if (resp == 3) {
+            Rastreio.menuRastreio(transportadora);
         }
     }
     

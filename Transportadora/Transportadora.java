@@ -21,7 +21,7 @@ public class Transportadora
         pedidos = new ArrayList<>();
     }
     
-    public PedidoEntrega rastrearPedidoPorCodigo(UUID cod){
+    public PedidoEntrega getPedidoPorCodigo(UUID cod){
             for(PedidoEntrega pe : pedidos){
                 if(pe.getCodRastreio().equals(cod)){
                     return pe;
@@ -57,25 +57,9 @@ public class Transportadora
         return null;
     }
     
-    public void historicoPedido(UUID cod){
-        PedidoEntrega p = rastrearPedidoPorCodigo(cod);
-        if(p != null){
-            System.out.println("Pedido: "+p.getCodRastreio());
-            for(StatusEntrega s : p.getStatusEntrega()){
-                System.out.println("Status: "+s.getStatusAtual());
-                System.out.println("Data: "+s.getDataHora());
-                System.out.println("Responsável: "+s.getResponsavel());
-                System.out.println();
-            }
-        }
-        else{
-            System.out.println("Pedido não encontrado");
-        }
-        
-    }
     
     public void atualizarStatus(UUID cod, Status statusAtualizado, Funcionario responsavel){
-        PedidoEntrega p = rastrearPedidoPorCodigo(cod);
+        PedidoEntrega p = getPedidoPorCodigo(cod);
         
         if(p != null){
             StatusEntrega novoStatus = new StatusEntrega(statusAtualizado, LocalDateTime.now(), responsavel);
