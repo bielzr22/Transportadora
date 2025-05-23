@@ -7,4 +7,9 @@ public class Cliente extends Pessoa
     {
         super(nome, cpf, telefone);
     }
+    
+    @Override
+    public String toString(){
+        return "Nome: " +getNome()+ "\nCPF: " +getCpf()+ "\nTelefone: " +getTelefone();
+    }
 }

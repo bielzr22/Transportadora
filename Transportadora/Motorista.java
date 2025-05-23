@@ -25,6 +25,9 @@ public class Motorista extends Funcionario
     public void setDisponibilidade(boolean disponibilidade){
         this.disponibilidade= disponibilidade;
     }
-
     
+    @Override
+    public String toString(){
+        return "Nome: "+getNome() + "\nCPF: " +getCpf() +"\nTelefone: "+getTelefone()+ "\nCNH: "+getCnh()+ "\nDisponibilidade: "+getDisponibilidade();
+    }
 }

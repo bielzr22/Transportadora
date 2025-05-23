@@ -41,6 +41,9 @@ public class Veiculo
         this.disponibilidade = disponibilidade;
     }
     
-
+    @Override
+    public String toString(){
+        return "Placa: " +getPlaca()+ "\nModelo: " +getModelo()+ "\nCapacidade de carga: " +getCapacidadeCarga()+ "/nDisponibilidade: " +getDisponibilidade();
+    }
     
 }

@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.UUID;
 
 public class Main
 {
@@ -15,8 +16,12 @@ public class Main
         
         if(resp == 1){
             Cadastro.cadastrar(transportadora);
+        }else if(resp == 2){
+            Consulta.menuConsulta(transportadora);
         }else if (resp == 3) {
             Rastreio.menuRastreio(transportadora);
+        }else if (resp == 4) {
+            //atualizarPedido(transportadora);
         }
     }
     
@@ -27,4 +32,21 @@ public class Main
         System.out.println("3) Rastrear");
         System.out.println("4) Atualizar pedido");
     }
+    
+    /*
+    public static void atualizarPedido(Transportadora t){
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Código do pedido para atualizar: ");
+        UUID cod = UUID.fromString(sc.nextLine());
+        System.out.println("Status do pedido para atualizar: ");
+        Status statusAtualizado = sc.nextLine();
+        System.out.println("CNH do Motorista responsável pela atualização do pedido: ");
+        String cnh = sc.nextLine();    
+        Motorista responsavel = t.getMotoristaPorCNH(cnh);
+    
+
+        
+        t.atualizarStatus(cod, statusAtualizado,responsavel);
+    }*/
 }
