@@ -40,12 +40,18 @@ public class Cadastro
         if(tipo.equalsIgnoreCase("carro")){
             Carro carro = new Carro(placa, modelo, capCarga);
             t.adicionaVeiculo(carro);
+            System.out.println("Veiculo cadastrado!");
+            System.out.println();
         }if(tipo.equalsIgnoreCase("moto")){
             Moto moto= new Moto(placa, modelo, capCarga);
-             t.adicionaVeiculo(moto);
+            t.adicionaVeiculo(moto);
+            System.out.println("Veiculo cadastrado!");
+            System.out.println();
         }if(tipo.equalsIgnoreCase("caminhao")){
             Caminhao caminhao = new Caminhao(placa, modelo, capCarga);
             t.adicionaVeiculo(caminhao);
+            System.out.println("Veiculo cadastrado!");
+            System.out.println();
         }
         
     }
@@ -64,6 +70,8 @@ public class Cadastro
         
         Motorista motorista = new Motorista(nome, cpf, telefone, cnh);
         t.adicionaMotorista(motorista);
+        System.out.println("Motorista cadastrado!");
+        System.out.println();
     }
     
     public static void cadastrarCliente(Transportadora t){
@@ -78,6 +86,8 @@ public class Cadastro
         
         Cliente cliente = new Cliente(nome, cpf, telefone);
         t.adicionaCliente(cliente);
+        System.out.println("Cliente cadastrado!");
+        System.out.println();
     }
     
     public static void cadastrarPedido(Transportadora t){
@@ -93,6 +103,7 @@ public class Cadastro
         }else{
             t.criarPedido(c);
         }
+        System.out.println();
     }
     
 }

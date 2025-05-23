@@ -1,4 +1,4 @@
-import java.util.Scanner;
+ import java.util.Scanner;
 
 public class Consulta
 {
@@ -24,25 +24,46 @@ public class Consulta
     
     public static void consultaFuncionario(Transportadora t){
         int i = 1;
-        for(Funcionario f : t.getMotorista()){
-            System.out.println("Funcionário #"+i);
-            System.out.println(f);
+        
+        if(t.getMotorista().isEmpty()){
+            System.out.println("Sem funcionários");
+            System.out.println();
+        }else{
+            for(Funcionario f : t.getMotorista()){
+                System.out.println("Funcionário #"+i);
+                System.out.println(f);
+                i++;
+            }
         }
     }
     
     public static void consultaVeiculo(Transportadora t){
         int i =1;
-        for(Veiculo v : t.getVeiculo()){
-            System.out.println("Veículo #"+1);
-            System.out.println(v);
+        
+        if(t.getVeiculo().isEmpty()){
+            System.out.println("Sem veículos");
+           System.out.println();
+        }else{
+            for(Veiculo v : t.getVeiculo()){
+                System.out.println("Veículo #"+i);
+                System.out.println(v);
+                i++;
+            }
         }
     }
     
     public static void consultaCliente(Transportadora t){
         int i =1;
-        for(Cliente c : t.getCliente()){
-            System.out.println("Cliente #"+1);
-            System.out.println(c);
+        
+        if(t.getCliente().isEmpty()){
+            System.out.println("Sem clientes");
+            System.out.println();   
+        }else{
+            for(Cliente c : t.getCliente()){
+                System.out.println("Cliente #"+i);
+                System.out.println(c);
+                i++;
+            }
         }
     }
 }

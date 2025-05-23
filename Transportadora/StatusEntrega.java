@@ -33,4 +33,9 @@ public class StatusEntrega
     public void setResponsavel(Funcionario responsavel){
      this.responsavel= responsavel;
     }
+    
+    @Override
+    public String toString(){
+        return "Status atual: " +getStatusAtual().toString()+ "\nData e hora: " +getDataHora().toString()+ "\nResponsável: " +getResponsavel().getNome();
+    }
 }

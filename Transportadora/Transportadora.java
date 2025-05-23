@@ -117,6 +117,8 @@ public class Transportadora
             m.setDisponibilidade(false);
             v.setDisponibilidade(false);
             pedidos.add(p);
+            System.out.println("Pedido criado! Código do pedido: "+ p.getCodRastreio());
+            System.out.println();
         }
         
     }

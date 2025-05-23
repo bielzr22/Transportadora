@@ -12,7 +12,7 @@ public class Main
         
         String continuar = "s";
         
-        while(continuar == "s"){
+        while(continuar.equalsIgnoreCase("s")){
             menuInicial();
         
             int resp = sc.nextInt();
